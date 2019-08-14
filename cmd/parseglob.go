@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	tpl, err := template.ParseFiles("../template/index2.gohtml", "../template/index.gohtml")
+	tpl, err := template.ParseGlob("../template2/*")
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -18,16 +18,10 @@ func main() {
 	}
 	user := User{
 		Name:   "Kim",
-		Coupon: "STARKCORP",
+		Coupon: "STARTINDUSTRIES",
 		Amount: 5000,
 	}
-
-	err = tpl.Execute(os.Stdout, user)
-	if err != nil {
-		panic(err)
-	}
-
-	err = tpl.Execute(os.Stdout, user)
+	err = tpl.ExecuteTemplate(os.Stdout, "main", user)
 	if err != nil {
 		panic(err)
 	}
