@@ -25,7 +25,7 @@ func main() {
 		Amount: 5000,
 	}
 
-	err = tpl.Execute(os.Stdout, user)
+	err = tpl.ExecuteTemplate(os.Stdout, "index.gohtml", user)
 	if err != nil {
 		panic(err)
 	}

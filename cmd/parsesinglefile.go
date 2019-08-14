@@ -18,7 +18,7 @@ func main() {
 	}
 	user := User{
 		Name:   "Kim",
-		Coupon: "STARKCOUPON",
+		Coupon: "STARKINDUSTRIES",
 		Amount: 5000,
 	}
 	err = tpl.Execute(os.Stdout, user)
