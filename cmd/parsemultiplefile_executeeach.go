@@ -8,8 +8,6 @@ import (
 
 func main() {
 
-	// First Template will be used as main template, the others are needed to be included in first file if you need to show it
-	// See example of incuded file in index.gohtml
 	tpl, err := template.ParseFiles("../template/index.gohtml", "../template/index2.gohtml")
 	if err != nil {
 		log.Fatalln(err)
